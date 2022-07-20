@@ -1,36 +1,16 @@
-import Counter from "@components/Counter";
-import logo from "@assets/logo.svg";
+import Navbar from "@components/Navbar";
+import SearchMovies from "@components/SearchMovies";
+import React from "react";
 
-export default function Home() {
+function Home() {
   return (
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>Hello Vite + React !</p>
-
-      <Counter />
-
-      <p>
-        Edit <code>App.jsx</code> and save to test HMR updates.
-      </p>
-      <p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        {" | "}
-        <a
-          className="App-link"
-          href="https://vitejs.dev/guide/features.html"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Vite Docs
-        </a>
-      </p>
-    </header>
+    <div>
+      <Navbar />
+      <h1>Movizz le Retour</h1>
+      <SearchMovies />
+      coucou dqj
+    </div>
   );
 }
+
+export default Home;
