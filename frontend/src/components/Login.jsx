@@ -16,7 +16,7 @@ function Login({ closeLoginModal }) {
         localStorage.setItem("userId", res.data.id);
         localStorage.setItem("loggedIn", true);
         closeLoginModal();
-        window.reload();
+        window.location.reload();
       })
       .catch((err) => console.error(err));
   };

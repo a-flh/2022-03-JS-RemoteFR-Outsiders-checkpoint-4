@@ -26,7 +26,6 @@ function MovieCardForUser({ movie, setisMovieDeleted }) {
         <h4>
           {movie.vote_average}/10 <span>⭐</span>
         </h4>
-
         <ul>
           {movie.genres.split(",").map((genre) => (
             <li key={movie.id}>{genre}</li>

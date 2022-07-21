@@ -23,8 +23,6 @@ function Signup({ closeSignupModal }) {
       .catch((err) => console.error(err));
   };
 
-  // console.log(isSignupModal)
-
   return (
     <div className="modal">
       <div

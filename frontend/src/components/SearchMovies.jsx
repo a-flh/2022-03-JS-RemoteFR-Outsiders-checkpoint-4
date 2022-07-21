@@ -30,9 +30,7 @@ function SearchMovies() {
             id="search-input"
             onChange={(e) => setSearch(e.target.value)}
           />
-          {/* <input type="submit" value="Rechercher" /> */}
         </form>
-
         <div className="btn-sort-container">
           <button
             type="button"
