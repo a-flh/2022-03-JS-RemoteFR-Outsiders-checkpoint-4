@@ -1,0 +1,147 @@
+.add-topic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.add-topic input {
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.4rem;
+  width: 500px;
+  outline: none;
+  text-align: center;
+  font-weight: bold;
+}
+
+.add-topic button {
+  background: var(--clear-blue);
+  padding: 8px 0;
+  width: 140px;
+  text-align: center;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+  user-select: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 20px;
+}
+
+.add-topic button:hover {
+  transform: scale(1.06);
+  color: var(--white);
+  border: 2px solid var(--white);
+}
+
+details {
+  background-color: var(--black);
+  margin-top: 20px;
+  min-width: 70%;
+  max-width: 60%;
+  padding: 15px;
+  padding-left: 25px;
+  border-radius: 20px;
+}
+
+summary {
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.topics-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.topic-date {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+
+.form-topic {
+  margin-top: 55px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-topic textarea {
+  height: 150px;
+  width: 50%;
+  min-width: 300px;
+  padding: 3px 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.3rem;
+  outline: none;
+  font-weight: bold;
+  background: var(--white);
+}
+
+.form-topic button {
+  background: var(--red);
+  color: white;
+  border: 2px solid var(--white);
+  padding: 8px 0;
+  width: 140px;
+  text-align: center;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+  user-select: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 20px;
+}
+
+.form-topic button:hover {
+  background: var(--white);
+  border: 2px solid var(--red);
+  color: var(--red);
+  transform: scale(1.06);
+}
+
+.message-container {
+  margin: 40px 20px 20px;
+}
+
+.message-post {
+  background: var(--white);
+  color: var(--black);
+  margin-top: 25px;
+  border-radius: 15px;
+  font-weight: bold;
+  padding: 15px;
+  width: auto;
+}
+
+.user-pseudo {
+  font-style: italic;
+}
+
+.message-content {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+
+.message-infos {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.personal-message-post {
+  background: var(--clear-blue);
+  color: var(--white);
+  margin-top: 25px;
+  border-radius: 15px;
+  font-weight: bold;
+  padding: 15px;
+  width: auto;
+}

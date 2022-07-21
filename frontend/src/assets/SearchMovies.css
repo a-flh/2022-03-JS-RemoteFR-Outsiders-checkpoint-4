@@ -1,0 +1,53 @@
+.form-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.form-container form {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.form-container input[type="text"] {
+  padding: 3px 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.8rem;
+  display: block;
+  margin: 0 auto;
+  width: 300px;
+  outline: none;
+  text-align: center;
+  font-weight: bold;
+}
+
+.btn-sort-container {
+  margin: 8px auto;
+  width: 220px;
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+#goodToBad,
+#badToGood {
+  background: var(--clear-blue);
+  min-width: 150px;
+  transition: 0.3s;
+  font-weight: bold;
+  font-size: 1.8rem;
+  margin-top: 10px;
+}
+
+#goodToBad:hover,
+#badToGood:hover {
+  transform: scale(1.08);
+}
+
+#goodToBad {
+  border-radius: 10px 0 0 10px;
+}
+
+#badToGood {
+  border-radius: 0 10px 10px 0;
+}
