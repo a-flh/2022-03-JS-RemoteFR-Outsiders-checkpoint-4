@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../assets/Login.css";
+import "../assets/Modal.css";
 import API from "@services/api";
 
 function Login({ closeLoginModal }) {
@@ -16,28 +16,29 @@ function Login({ closeLoginModal }) {
         localStorage.setItem("userId", res.data.id);
         localStorage.setItem("loggedIn", true);
         closeLoginModal();
+        window.reload();
       })
       .catch((err) => console.error(err));
   };
 
   return (
-    <div className="login-modal">
+    <div className="modal">
       <div
         aria-hidden="true"
         onClick={closeLoginModal}
-        className="login-modal-overlay"
+        className="modal-overlay"
       />
-      <div className="login-modal-content">
-        <div className="login-modal-header">
+      <div className="modal-content">
+        <div className="modal-header">
           <button
             type="button"
-            className="login-modal-close-button"
+            className="modal-close-button"
             onClick={closeLoginModal}
           >
             &times;
           </button>
         </div>
-        <div className="login-modal-message">
+        <div className="modal-message">
           <form onSubmit={handleSubmit}>
             <div>
               <input

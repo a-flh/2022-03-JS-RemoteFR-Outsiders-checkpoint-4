@@ -1,0 +1,100 @@
+.modal-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 200ms ease-in-out;
+  border-radius: 25px;
+  background-color: var(--clear-blue);
+  height: auto;
+  min-height: 20rem;
+  width: 25vw;
+  min-width: 20rem;
+}
+
+.modal-overlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.modal-close-button {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 2rem;
+  font-weight: bold;
+  padding-right: 1rem;
+  padding-top: 0.2rem;
+  color: var(--white);
+}
+
+.modal-close-button:hover {
+  color: var(--red);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-message {
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+}
+
+.modal-message h2 {
+  font-size: 2rem;
+  margin-top: 3rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.modal-message button {
+  font-size: 1.1rem;
+  width: 8em;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  padding: 0.3em;
+  margin-top: 2em;
+  margin-bottom: 1rem;
+  border: none;
+  font-weight: bold;
+}
+
+.modal-message button:hover {
+  cursor: pointer;
+  color: var(--black);
+  background-color: white;
+  transition: 0.5s;
+}
+
+.modal-message input {
+  margin-top: 1.6rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  min-width: 14rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+}
+
+.modal-message input:focus {
+  outline-color: var(--red);
+  box-shadow: 0 0 4px var(--red);
+}

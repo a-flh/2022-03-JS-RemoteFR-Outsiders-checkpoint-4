@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import MovieCard from "./MovieCard";
+import "../assets/common.css";
+import "../assets/SearchMovies.css";
 
 function SearchMovies() {
   const [moviesData, setMoviesData] = useState([]);
-  const [search, setSearch] = useState("e");
+  const [search, setSearch] = useState("a");
   const [sortGoodBad, setSortGoodBad] = useState("");
   const apiKey = "8b3e8af5c0e9e0a359483a16acf719e2";
 
@@ -24,11 +26,11 @@ function SearchMovies() {
         <form>
           <input
             type="text"
-            placeholder="Entrez le titre d'un film"
+            placeholder="Rechercher un film"
             id="search-input"
             onChange={(e) => setSearch(e.target.value)}
           />
-          <input type="submit" value="Rechercher" />
+          {/* <input type="submit" value="Rechercher" /> */}
         </form>
 
         <div className="btn-sort-container">
@@ -38,7 +40,7 @@ function SearchMovies() {
             id="goodToBad"
             onClick={() => setSortGoodBad("goodToBad")}
           >
-            Best<span>&#10138;</span>
+            Best <span>&#10138;</span>
           </button>
           <button
             type="button"
@@ -46,7 +48,7 @@ function SearchMovies() {
             id="badToGood"
             onClick={() => setSortGoodBad("badToGood")}
           >
-            Worst<span>&#10136;</span>
+            Worst <span>&#10136;</span>
           </button>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../assets/Signup.css";
+import "../assets/Modal.css";
 import API from "@services/api";
 
 function Signup({ closeSignupModal }) {
@@ -26,23 +26,23 @@ function Signup({ closeSignupModal }) {
   // console.log(isSignupModal)
 
   return (
-    <div className="signup-modal">
+    <div className="modal">
       <div
         aria-hidden="true"
         onClick={closeSignupModal}
-        className="signup-modal-overlay"
+        className="modal-overlay"
       />
-      <div className="signup-modal-content">
-        <div className="signup-modal-header">
+      <div className="modal-content">
+        <div className="modal-header">
           <button
             type="button"
-            className="signup-modal-close-button"
+            className="modal-close-button"
             onClick={closeSignupModal}
           >
             &times;
           </button>
         </div>
-        <div className="signup-modal-message">
+        <div className="modal-message">
           {isSignedIn ? (
             <h2>Votre inscription a bien été prise en compte !</h2>
           ) : (

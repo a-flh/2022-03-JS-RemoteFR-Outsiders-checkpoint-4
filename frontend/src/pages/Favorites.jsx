@@ -3,6 +3,7 @@ import Navbar from "@components/Navbar";
 import API from "@services/api";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import "../assets/MovieCard.css";
 
 function Favorites() {
   const userId = parseInt(localStorage.getItem("userId"), 10);
@@ -25,15 +26,25 @@ function Favorites() {
 
   return (
     <div>
+      <h1>Movizz le Retour</h1>
       <Navbar />
-      {moviesData &&
-        moviesData.map((movie) => (
-          <MovieCardForUser
-            key={movie.id}
-            movie={movie}
-            setisMovieDeleted={setisMovieDeleted}
-          />
-        ))}
+      <div className="result">
+        {moviesData.length !== 0 ? (
+          moviesData
+            .map((movie) => (
+              <MovieCardForUser
+                key={movie.id}
+                movie={movie}
+                setisMovieDeleted={setisMovieDeleted}
+              />
+            ))
+            .reverse()
+        ) : (
+          <h2 className="no-favorites-sentence">
+            Aucun favori à afficher &nbsp;: (
+          </h2>
+        )}
+      </div>
     </div>
   );
 }

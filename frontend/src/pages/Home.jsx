@@ -5,10 +5,9 @@ import React from "react";
 function Home() {
   return (
     <div>
-      <Navbar />
       <h1>Movizz le Retour</h1>
+      <Navbar />
       <SearchMovies />
-      coucou dqj
     </div>
   );
 }

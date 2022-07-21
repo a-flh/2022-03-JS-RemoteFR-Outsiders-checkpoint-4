@@ -1,9 +1,11 @@
 import API from "@services/api";
-import React from "react";
+import React, { useState } from "react";
+import "../assets/MovieCard.css";
 import poster from "../assets/poster.jpg";
 
 function MovieCard({ movie }) {
   const userId = parseInt(localStorage.getItem("userId"), 10);
+  const [isMovieAdded, setIsMovieAdded] = useState(false);
 
   const dateFormater = (date) => {
     const [yy, mm, dd] = date.split("-");
@@ -78,8 +80,6 @@ function MovieCard({ movie }) {
     return genreArray.map((genre) => <li key={genre}>{genre}</li>);
   };
 
-  // console.log(genreFinder([10402, 14, 35, 878, 10751, 10770]).map(el => el.key).join(","))
-
   const addMovie = () => {
     API.post(`/add-movies/users/${userId}`, {
       userId,
@@ -92,38 +92,42 @@ function MovieCard({ movie }) {
         .join(","),
       overview: movie.overview,
     })
-      // .then((res) => console.log(res.data))
+      .then(() => setIsMovieAdded(true))
       .catch((err) => console.error(err));
   };
 
   return (
-    <div className="movie-card">
-      <img
-        src={
-          movie.poster_path
-            ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-            : poster
-        }
-        alt="affiche film"
-      />
-      <h2>{movie.title}</h2>
-      {movie.release_date ? (
-        <h5>Sorti le {dateFormater(movie.release_date)}</h5>
-      ) : (
-        ""
-      )}
-      <h4>
-        {movie.vote_average}/10 <span>⭐</span>
-      </h4>
+    <div className="movie-container">
+      <div className="movie-card">
+        <img
+          src={
+            movie.poster_path
+              ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+              : poster
+          }
+          alt="affiche film"
+        />
+        <h2>{movie.title}</h2>
+        {movie.release_date ? (
+          <h5>Sorti le {dateFormater(movie.release_date)}</h5>
+        ) : (
+          ""
+        )}
+        <h4>
+          {movie.vote_average}/10 <span>⭐</span>
+        </h4>
 
-      <ul>{movie.genre_ids && genreFinder(movie.genre_ids)}</ul>
-      {movie.overview ? <h3>Synopsis</h3> : ""}
-      <p>{movie.overview}</p>
-      {localStorage.getItem("loggedIn") && (
-        <button type="button" onClick={() => addMovie()}>
-          Ajouter aux favoris
-        </button>
-      )}
+        <ul>{movie.genre_ids && genreFinder(movie.genre_ids)}</ul>
+        {movie.overview ? <h3>Synopsis</h3> : ""}
+        <p>{movie.overview}</p>
+      </div>
+      <div className="button-container">
+        {localStorage.getItem("loggedIn") && (
+          <button className="btn" type="button" onClick={() => addMovie()}>
+            {isMovieAdded ? "Ajouté !" : "Ajouter aux favoris"}
+          </button>
+        )}
+      </div>
     </div>
   );
 }
