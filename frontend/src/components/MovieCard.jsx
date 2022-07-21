@@ -116,7 +116,6 @@ function MovieCard({ movie }) {
         <h4>
           {movie.vote_average}/10 <span>⭐</span>
         </h4>
-
         <ul>{movie.genre_ids && genreFinder(movie.genre_ids)}</ul>
         {movie.overview ? <h3>Synopsis</h3> : ""}
         <p>{movie.overview}</p>
