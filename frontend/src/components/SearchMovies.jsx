@@ -5,8 +5,11 @@ import "../assets/common.css";
 import "../assets/SearchMovies.css";
 
 function SearchMovies() {
+  const randomLetterGenerator = "abcdefghijklmnopqrstuvwxyz".split("")[
+    Math.ceil(Math.random() * 26)
+  ];
   const [moviesData, setMoviesData] = useState([]);
-  const [search, setSearch] = useState("a");
+  const [search, setSearch] = useState(randomLetterGenerator);
   const [sortGoodBad, setSortGoodBad] = useState("");
   const apiKey = "8b3e8af5c0e9e0a359483a16acf719e2";
 
